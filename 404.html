@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page introuvable</title>
+    <meta http-equiv="refresh" content="5;url=/">
+  </head>
+  <body>
+    <h1>Page introuvable</h1>
+    <p>Désolé, la page que vous recherchez est introuvable. Vous allez être redirigé vers la page d'accueil dans 5 secondes.</p>
+    <script>
+      // Récupération de l'URL demandée
+      var currentUrl = window.location.href;
+      // Suppression du nom de domaine pour obtenir le chemin relatif
+      var relativePath = currentUrl.replace(window.location.origin, "");
+      // Si le chemin relatif contient une barre oblique supplémentaire, supprimez-la
+      if (relativePath.endsWith("/")) {
+        relativePath = relativePath.slice(0, -1);
+      }
+      // Redirection vers la page la plus proche
+      window.location.href = relativePath;
+    </script>
+  </body>
+</html>
